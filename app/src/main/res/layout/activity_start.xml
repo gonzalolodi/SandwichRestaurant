@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_goto_selection"
-            android:id="@+id/button_goto_selection" />
+            android:id="@+id/button_goto_selection"
+            android:enabled="false" />
     </LinearLayout>
 </LinearLayout>

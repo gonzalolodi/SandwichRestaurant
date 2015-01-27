@@ -26,6 +26,7 @@ public class MainActivity extends ActionBarActivity {
     CheckBox mCheckBoxOnion;
     RadioButton mRadioButtonWhite;
     RadioButton mRadioButtonWheat;
+    int mOrdersCount;
 
 
 
@@ -33,20 +34,24 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        mButtonPlaceOrder= (Button) findViewById(R.id.button_place_order);
-        View.OnClickListener buttonPlaceOrderListener=(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent= new Intent(MainActivity.this,OrderView.class);
-                prepareRadioButtons();
-                intent.putExtra("bread",getBread());
-                intent.putExtra("topping",getToppingOptions());
-                startActivity(intent);
-            }
-        });
-        prepareCheckBoxs();
-        mButtonPlaceOrder.setOnClickListener(buttonPlaceOrderListener);
+        mOrdersCount=getIntent().getIntExtra("count",0);
+        if (mOrdersCount>0){
+            setContentView(R.layout.activity_main);
+            mButtonPlaceOrder= (Button) findViewById(R.id.button_place_order);
+            View.OnClickListener buttonPlaceOrderListener=(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent= new Intent(MainActivity.this,OrderView.class);
+                    prepareRadioButtons();
+                    intent.putExtra("bread",getBread());
+                    intent.putExtra("topping",getToppingOptions());
+                    startActivity(intent);
+                }
+            });
+            prepareCheckBoxs();
+            mButtonPlaceOrder.setOnClickListener(buttonPlaceOrderListener);
+
+        }
 
 
     }
