@@ -22,8 +22,12 @@
     <string name="title_activity_order_view">OrderView</string>
     <string name="text_order_succesfull">Your order has been succesfully placed!</string>
     <string name="text_bread_choice">Your chosen bread is:</string>
-    <string name="text_bread" />
+    <string name="text_bread"></string>
     <string name="text_topping_title">Your chosen topping options are:</string>
-    <string name="text_topping_choice" />
+    <string name="text_topping_choice"></string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="text_start_title">Please enter the number of sandwiches you want to order:</string>
+    <string name="edit_sandwich_count_hint">Max 5 sandwiches</string>
+    <string name="button_goto_selection">Go to order options</string>
 
 </resources>

@@ -20,6 +20,10 @@
             android:name=".OrderView"
             android:label="@string/title_activity_order_view" >
         </activity>
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/title_activity_start" >
+        </activity>
     </application>
 
 </manifest>
