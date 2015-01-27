@@ -13,10 +13,9 @@ public class OrderView extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_view);
-        TextView order= (TextView) findViewById(R.id.text_order);
-
-        TextView topping= (TextView) findViewById(R.id.text_topping);
-        order.setText(getIntent().getStringExtra("bread"));
+        TextView bread= (TextView) findViewById(R.id.text_bread);
+        TextView topping= (TextView) findViewById(R.id.text_topping_choice);
+        bread.setText(getIntent().getStringExtra("bread"));
         topping.setText(getIntent().getStringExtra("topping"));
 
     }
