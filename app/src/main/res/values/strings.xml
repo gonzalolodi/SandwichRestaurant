@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SandwichRestaurant</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="text_main_order">Sandwich Order Form</string>
+    <string name="text_radio_button_wheat">Wheat</string>
+    <string name="text_radio_button_white">White</string>
+    <string name="text_radio_button_rye">Rye</string>
+    <string name="text_choose_bread">Choose your bread type:</string>
+    <string name="text_choose_topping">Choose your topping options:</string>
+    <string name="checkbox_tomato">Tomato</string>
+    <string name="checkbox_pickles">Pickles</string>
+    <string name="checkbox_extra_cheese">Extra cheese</string>
+    <string name="checkbox_bacon">Bacon</string>
+    <string name="checkbox_lettuce">Lettuce</string>
+    <string name="checkbox_egg">Egg</string>
+    <string name="checkbox_olives">Olives</string>
+    <string name="checkbox_onion">Onion</string>
+    <string name="button_place_order">Place my order!</string>
+    <string name="title_activity_order_view">OrderView</string>
+    <string name="text_order_succesfull">Your order has been succesfully placed!</string>
+    <string name="text_bread_choice">Your chosen bread is:</string>
+    <string name="text_bread" />
+    <string name="text_topping_title">Your chosen topping options are:</string>
+    <string name="text_topping_choice" />
+
+</resources>
