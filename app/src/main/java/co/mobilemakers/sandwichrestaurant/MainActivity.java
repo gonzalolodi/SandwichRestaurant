@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 
@@ -27,6 +26,9 @@ public class MainActivity extends ActionBarActivity {
     RadioButton mRadioButtonWhite;
     RadioButton mRadioButtonWheat;
     int mOrdersCount;
+    Bundle mBundle;
+    ArrayList<Sandwich> mSandwiches;
+    Sandwich mSandwich;
 
 
 
@@ -34,26 +36,48 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mOrdersCount=getIntent().getIntExtra("count",0);
-        if (mOrdersCount>0){
-            setContentView(R.layout.activity_main);
-            mButtonPlaceOrder= (Button) findViewById(R.id.button_place_order);
-            View.OnClickListener buttonPlaceOrderListener=(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+        setContentView(R.layout.activity_main);
+        prepareExtras();
+        prepareButton();
+        prepareCheckBoxs();
+        prepareRadioButtons();
+
+
+    }
+
+    private void prepareExtras() {
+        mBundle=this.getIntent().getExtras();
+        mOrdersCount=mBundle.getInt("count");
+        mSandwiches= mBundle.getParcelableArrayList("orders");
+    }
+
+    private void prepareButton() {
+        mButtonPlaceOrder= (Button) findViewById(R.id.button_place_order);
+        View.OnClickListener buttonPlaceOrderListener=(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addSandwich();
+                Bundle mB= new Bundle();
+                mB.putParcelableArrayList("orders", mSandwiches);
+                if (mOrdersCount==1){
                     Intent intent= new Intent(MainActivity.this,OrderView.class);
-                    prepareRadioButtons();
-                    intent.putExtra("bread",getBread());
-                    intent.putExtra("topping",getToppingOptions());
+                    intent.putExtras(mB);
+                    startActivity(intent);
+                }else{
+                    mB.putInt("count",mOrdersCount-1);
+                    Intent intent= new Intent(MainActivity.this,MainActivity.class);
+                    intent.putExtras(mB);
                     startActivity(intent);
                 }
-            });
-            prepareCheckBoxs();
-            mButtonPlaceOrder.setOnClickListener(buttonPlaceOrderListener);
 
-        }
+            }
+        });
+        mButtonPlaceOrder.setOnClickListener(buttonPlaceOrderListener);
+    }
 
-
+    public void addSandwich() {
+        mSandwich= new Sandwich(getToppingOptions(),getBread());
+        mSandwiches.add(mSandwich);
     }
 
     private String getToppingOptions(){

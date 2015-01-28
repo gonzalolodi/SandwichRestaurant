@@ -7,8 +7,7 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1">
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,39 +30,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/text_bread_choice"
-            android:id="@+id/text_bread_choice"
-            android:gravity="center" />
+            android:id="@+id/text_bread_choice" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/text_bread"
-            android:id="@+id/text_bread"
-            android:gravity="center" />
+            android:id="@+id/text_sandwiches" />
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_topping_title"
-            android:id="@+id/text_topping_title"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/text_topping_choice"
-            android:id="@+id/text_topping_choice"
-            android:gravity="center" />
-    </LinearLayout>
 </LinearLayout>

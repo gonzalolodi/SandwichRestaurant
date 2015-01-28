@@ -6,17 +6,28 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class OrderView extends ActionBarActivity {
+    ArrayList<Sandwich> mSandwiches;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_view);
-        TextView bread= (TextView) findViewById(R.id.text_bread);
-        TextView topping= (TextView) findViewById(R.id.text_topping_choice);
-        bread.setText(getIntent().getStringExtra("bread"));
-        topping.setText(getIntent().getStringExtra("topping"));
+        TextView sandwichesText= (TextView) findViewById(R.id.text_sandwiches);
+        Bundle mBundle=this.getIntent().getExtras();
+        mSandwiches=mBundle.getParcelableArrayList("orders");
+        int cant=1;
+        String resultString="";
+        for (Sandwich s:mSandwiches){
+            resultString+=("Sandwich "+Integer.toString(cant)+": "+s.getBread()+"(bread). Extras:"+s.getToppingOptions())+"\n";
+            cant++;
+        }
+        sandwichesText.setText(resultString);
+
 
     }
 

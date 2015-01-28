@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 
 public class StartActivity extends ActionBarActivity {
     Button mButtonGoToOrder;
@@ -61,6 +64,8 @@ public class StartActivity extends ActionBarActivity {
                 if ((0<sandwichCount)&&(sandwichCount<6)){
                     Intent intent=new Intent(StartActivity.this,MainActivity.class);
                     intent.putExtra("count",sandwichCount);
+                    ArrayList<Sandwich> array= new ArrayList<Sandwich>();
+                    intent.putParcelableArrayListExtra("orders",array);
                     startActivity(intent);
                 }else{
                     Toast.makeText(StartActivity.this,"Enter a number from 1 to 5",Toast.LENGTH_SHORT);

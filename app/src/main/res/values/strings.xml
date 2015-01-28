@@ -21,7 +21,7 @@
     <string name="button_place_order">Place my order!</string>
     <string name="title_activity_order_view">OrderView</string>
     <string name="text_order_succesfull">Your order has been succesfully placed!</string>
-    <string name="text_bread_choice">Your chosen bread is:</string>
+    <string name="text_bread_choice">Your chosen Sandwiches are:</string>
     <string name="text_bread"></string>
     <string name="text_topping_title">Your chosen topping options are:</string>
     <string name="text_topping_choice"></string>
