@@ -14,7 +14,8 @@
         </activity>
         <activity
             android:name=".OrderView"
-            android:label="@string/title_activity_order_view" >
+            android:label="@string/title_activity_order_view"
+            android:theme="@style/ConfirmationTheme">
         </activity>
         <activity
             android:name=".StartActivity"
